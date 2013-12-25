@@ -1,0 +1,5 @@
+.asm.obj:
+  tasm /ml $*
+
+l28-1.exe: l28-1.obj
+  tlink l28-1

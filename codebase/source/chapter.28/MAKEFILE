@@ -1,0 +1,13 @@
+.asm.obj:
+  tasm /w-RES $*
+
+.obj.exe:
+  tlink $*
+
+all: 1 2 3
+
+1: l6-1.exe
+
+2: l6-2.exe
+
+3: l6-3.exe

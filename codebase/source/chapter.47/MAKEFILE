@@ -1,0 +1,22 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+all: 4 5 6
+
+4: l32-4.exe
+
+5: l32-5.exe
+
+6: l32-6.exe
+
+l32-4.exe: l32-7.obj l32-1.obj l32-4.obj
+  bcc -ms l32-4.obj l32-7.obj l32-1.obj noehs.lib
+
+l32-5.exe: l32-7.obj l32-1.obj l32-5.obj
+  bcc -ms l32-5.obj l32-7.obj l32-1.obj noehs.lib
+
+l32-6.exe: l32-7.obj l32-1.obj l32-6.obj
+  bcc -ms l32-6.obj l32-7.obj l32-1.obj noehs.lib

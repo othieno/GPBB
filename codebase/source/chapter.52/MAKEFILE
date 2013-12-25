@@ -1,0 +1,27 @@
+.c.obj:
+  bcc -ms -w-pro -c $<
+
+.asm.obj:
+  tasm /ml $<
+
+l37-1.exe:  l37-1.obj l37-2.obj l37-3.obj l37-4.obj l37-5.obj \
+ l37-6.obj l37-7.obj l37-8.obj l37-9.obj l21-1.obj l22-4.obj \
+ l32-1.obj l32-6.obj l34-6.obj l35-1.obj
+  bcc -ms @&&|
+ l37-1.obj \
+ l37-2.obj \
+ l37-3.obj \
+ l37-4.obj \
+ l37-5.obj \
+ l37-6.obj \
+ l37-7.obj \
+ l37-8.obj \
+ l37-9.obj \
+ l21-1.obj \
+ l22-4.obj \
+ l32-1.obj \
+ l32-6.obj \
+ l34-6.obj \
+ l35-1.obj \
+ noehs.lib
+|

@@ -1,0 +1,8 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+l29-1.exe: l29-1.obj l29-2.obj
+  bcc -ms l29-1.obj l29-2.obj noehs.lib

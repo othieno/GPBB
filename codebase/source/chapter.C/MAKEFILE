@@ -1,0 +1,19 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+all: 1 3
+
+1: l18-1.exe
+
+3: l18-3.exe
+
+# noehs.lib disables exception handling
+# remove the reference if the lib is not available
+l18-1.exe: l18-1.obj l18-2.obj
+  bcc -ms l18-1.obj l18-2.obj noehs.lib
+
+l18-3.exe: l18-3.obj l18-2.obj l18-4.obj
+  bcc -ms l18-3.obj l18-2.obj l18-4.obj noehs.lib

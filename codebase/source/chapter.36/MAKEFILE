@@ -1,0 +1,7 @@
+# noehs.lib disables exception handling
+# remove the reference if the lib is not available
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+l15-2.exe: l15-2.obj l15-1.obj
+  bcc -ms l15-2.obj l15-1.obj noehs.lib

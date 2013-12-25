@@ -1,0 +1,22 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+all: 2 5 6
+
+2: l27-2.exe
+
+5: l27-5.exe
+
+6: l27-6.exe
+
+l27-2.exe: l27-2.obj l27-1.obj l27-3.obj l27-4.obj
+  bcc -ms l27-2.obj l27-1.obj l27-3.obj l27-4.obj noehs.lib
+
+l27-5.exe: l27-1.obj l27-2.obj l27-4.obj l27-5.obj
+  bcc -ms l27-5.obj l27-2.obj l27-1.obj l27-4.obj noehs.lib
+
+l27-6.exe: l27-2.obj l27-6.obj l27-3.obj l27-4.obj
+  bcc -ms l27-6.obj l27-2.obj l27-3.obj l27-4.obj noehs.lib

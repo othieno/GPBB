@@ -1,0 +1,23 @@
+all: 1 2 3 4
+
+1: l22-1.exe
+
+2: l22-2.exe
+
+3: l22-3.exe
+
+4: l22-4.exe
+
+# noehc.lib disables exception handling
+# remove the reference if the lib is not available
+l22-1.exe: l22-1.c l21-1.c l21-3.c l21-4.c
+  bcc -mc -el22-1.exe l21-1.c l21-3.c l21-4.c l22-1.c noehc.lib
+
+l22-2.exe: l22-1.c l22-2.c l21-1.c l21-3.c
+  bcc -mc -el22-2.exe l21-1.c l21-3.c l22-1.c l22-2.c noehc.lib
+
+l22-3.exe: l22-3.asm l22-2.c l21-1.c l21-3.c
+  bcc -ms -el22-3.exe l22-3.asm l22-2.c l21-1.c l21-3.c noehs.lib
+
+l22-4.exe: l22-4.asm l22-3.asm l21-1.c l21-3.c
+  bcc -ms -el22-4.exe l22-4.asm l22-3.asm l21-1.c l21-3.c noehs.lib

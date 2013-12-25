@@ -1,0 +1,10 @@
+# Make file for ball vertex generator.
+
+.c.obj:
+   bcc -c $<
+
+.asm.obj:
+   tasm -ml -zi $*
+
+genball.exe: genball.obj matmath.obj addrot.obj
+  bcc genball.obj matmath.obj addrot.obj noehs.lib

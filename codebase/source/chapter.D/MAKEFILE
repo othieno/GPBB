@@ -1,0 +1,29 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+all: 21 24 31 34
+
+21: l19-21.exe
+
+24: l19-24.exe
+
+31: l19-31.exe
+
+34: l19-34.exe
+
+# noehs.lib disables exception handling
+# remove the reference if the lib is not available
+l19-21.exe: l19-2.obj l19-1.obj
+  bcc -ms -el19-21.exe l19-2.obj l19-1.obj noehs.lib
+
+l19-24.exe: l19-2.obj l19-4.obj
+  bcc -ms -el19-24.exe l19-2.obj l19-4.obj noehs.lib
+
+l19-31.exe: l19-3.obj l19-1.obj
+  bcc -ms -el19-31.exe l19-3.obj l19-1.obj noehs.lib
+
+l19-34.exe: l19-3.obj l19-4.obj
+  bcc -ms -el19-34.exe l19-3.obj l19-4.obj noehs.lib

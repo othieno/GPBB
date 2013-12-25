@@ -1,0 +1,1 @@
+bcc -ms gamma.c

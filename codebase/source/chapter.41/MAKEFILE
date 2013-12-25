@@ -1,0 +1,10 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+l24-1.exe: l24-1.obj l24-2.obj l24-3.obj l24-4.obj \
+           l22-4.obj l23-4.obj l23-5.obj
+  bcc -ms l24-1.obj l24-2.obj l24-3.obj l24-4.obj \
+          l22-4.obj l23-4.obj l23-5.obj noehs.lib

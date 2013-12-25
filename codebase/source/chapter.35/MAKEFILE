@@ -1,0 +1,20 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+all: 1 2
+
+1: l14-2.exe
+
+2: l14-3.exe
+
+# noehs.lib disables exception handling
+# remove the reference if the lib is not available
+
+l14-2.exe: l14-2.obj l14-1.obj
+  bcc -ms l14-2.obj l14-1.obj noehs.lib
+
+l14-3.exe: l14-2.obj l14-3.obj
+  bcc -ms l14-3.obj l14-2.obj noehs.lib

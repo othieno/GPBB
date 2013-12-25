@@ -1,0 +1,22 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+all: 2 4 5
+
+2: l26-2.exe
+
+4: l26-4.exe
+
+5: l26-5.exe
+
+l26-2.exe: l26-2.obj l26-1.obj l26-3.obj filcnvx.obj l22-4.obj
+  bcc -ms l26-2.obj l26-1.obj l26-3.obj filcnvx.obj l22-4.obj noehs.lib
+
+l26-4.exe: l26-1.obj l26-2.obj l26-4.obj filcnvx.obj l22-4.obj
+  bcc -ms -el26-4.exe l26-1.obj l26-2.obj l26-4.obj filcnvx.obj l22-4.obj noehs.lib
+
+l26-5.exe: l26-5.obj l26-6.obj l26-1.obj l26-3.obj filcnvx.obj l22-4.obj
+  bcc -ms l26-5.obj l26-6.obj l26-1.obj l26-3.obj filcnvx.obj l22-4.obj noehs.lib

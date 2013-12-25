@@ -1,0 +1,39 @@
+# Make file for 3D cube rotation example, with backface
+# removal and user translation & rotation control.
+
+.c.obj:
+   bcc -c $<
+
+.asm.obj:
+   tasm -ml -zi $*
+
+demo1.exe: demo1.obj approt.obj initfix.obj moveobj.obj drawpobj.obj \
+   draw.obj fillcnvx.obj scan.obj mode.obj showpage.obj \
+   fillrect.obj fixed.obj initball.obj olist.obj xfproj.obj globals.obj \
+   color.obj initpal.obj lighting.obj initligh.obj drawtexp.obj \
+   drawtex.obj
+  bcc @&&|
+  demo1.obj \
+  approt.obj \
+  initfix.obj \
+  moveobj.obj \
+  drawpobj.obj \
+  draw.obj \
+  fillcnvx.obj \
+  scan.obj \
+  mode.obj \
+  showpage.obj \
+  fillrect.obj \
+  fixed.obj \
+  initball.obj \
+  olist.obj \
+  xfproj.obj \
+  globals.obj \
+  color.obj \
+  initpal.obj \
+  lighting.obj \
+  initligh.obj \
+  drawtexp.obj \
+  drawtex.obj \
+  noehs.lib
+|

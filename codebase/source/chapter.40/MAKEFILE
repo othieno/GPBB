@@ -1,0 +1,19 @@
+.c.obj:
+  bcc -ms -c -w-pro $<
+
+.asm.obj:
+  tasm /ml $*
+
+all: 4 5
+
+4: l23-4.exe
+
+5: l23-5.exe
+
+# noehs.lib disables exception handling
+# remove the reference if the lib is not available
+l23-4.exe: l23-4.obj l23-1.obj l23-2.obj
+  bcc -ms l23-4.obj l23-1.obj l23-2.obj noehs.lib
+
+l23-5.exe: l23-4.obj l23-1.obj l23-5.obj
+  bcc -ms l23-5.obj l23-4.obj l23-1.obj noehs.lib
