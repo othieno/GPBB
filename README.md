@@ -236,12 +236,55 @@ Table of Contents
   - Taking a Spin through What You've Learned
   - Zenning
 23. [__Bones and Sinew__][23]
+  - At the Very Heart of Standard PC Graphics
+  - The VGA
+  - An Introduction to VGA Programming
+  - At the Core
+    - *Linear Planes and True VGA Modes*
+    - *Smooth Panning*
+    - *Color Plane Manipulation*
+    - *Page Flipping*
+  - The Hazards of VGA Clones
+  - Just the Beginning
+  - The Macro Assembler
 24. [__Parallel Processing with the VGA__][24]
+  - Taking on Graphics Memory Four Bytes at a Time
+  - VGA Programming: ALUs and Latches
+  - Notes on the ALU/Latch Demo Program
 25. [__VGA Data Machinery__][25]
+  - The Barrel Shifter, Bit Mask, and Set/Reset Mechanisms
+  - VGA Data Rotation
+  - The BitMask
+  - The VGA's Set/Reset Circuitry
+    - *Setting All Planes to a Single Color*
+    - *Manipulating Planes Individually*
+  - Notes on Set/Reset
+  - A Brief Note on Word OUTs
 26. [__VGA Write Mode 3__][26]
+  - The Write Mode That Grows on You
+  - A Mode Born in Strangeness
+  - A Note on Preserving Register Bits
 27. [__Yet Another VGA Write Mode__][27]
+  - Write Mode 2, Chunky Bitmaps, and Text-Graphics Coexistence
+  - Write Mode 2 and Set/Reset
+    - *A Byte's Progress in Write Mode 2*
+    - *Copying Chunky Bitmaps to VGA Memory Using Write Mode 2*
+    - *Drawing Color-Patterned Lines Using Write Mode 2*
+  - When to Use Write Mode 2 and When to Use Set/Reset
+  - Mode 13H--320x200 with 256 Colors
+  - Flipping Pages from Text to Graphics and Back
 28. [__Reading VGA Memory__][28]
+  - Read Modes 0 and 1, and the Color Don't Care Register
+  - Read Mode 0
+  - Read Mode 1
+  - When all Planes "Don't Care"
 29. [__Saving Screens and Other VGA Mysteries__][29]
+  - Useful Nuggets from the VGA Zen File
+  - Saving and Restoring EGA and VGA Screens
+  - 16 Colors out of 64
+  - Overscan
+  - A Bonus Blanker
+  - Modifying VGA Registers
 30. [__Video Est Omnis Divisa__][30]
 31. [__Higher 256-Color Resolution on the VGA__][31]
 32. [__Be It Resolved: 360x480__][32]
@@ -273,15 +316,110 @@ Table of Contents
 58. [__Heinlein's Crystal Ball, Spock's Brain, and the 9-Cycle Dare__][58]
 59. [__The Idea of BSP Trees__][59]
 60. [__Compiling BSP Trees__][60]
+  - Taking BSP Trees from Concept to Reality
+  - Compiling BSP Trees
+    - *Parametric Lines*
+    - *Parametric Line Clipping*
+    - *The BSP Compiler*
+  - Optimizing the BSP Tree
+  - BSP Optimization: an Undiscovered Country
 61. [__Frames of Reference__][61]
+  - The Fundamentals of the Math behind 3-D Graphics
+    - *3-D Math*
+    - *Foundation Definitions*
+  - The Dot Product
+    - *Dot Products of Unit Vectors*
+  - Cross Products and the Generation of Polygon Normals
+  - Using the Sign of the Dot Product
+  - Using the Dot Product for Projection
+    - *Rotation by Projection*
 62. [__One Story, Two Rules, and a BSP Renderer__][62]
+  - Taking a Compiled BSP Tree from Logical to Visual Reality
+  - BSP-based Rendering
+  - The Rendering Pipeline
+    - *Moving the Viewer*
+    - *Transformation into Viewspace*
+    - *Clipping*
+    - *Projection to Screenspace*
+    - *Walking the Tree, Backface Culling and Drawing*
+  - Notes on the BSP Renderer
 63. [__Floating-Point for Real-Time 3-D__][63]
+  - Knowing When to Hurl Conventional Math Wisdom Out the Window
+  - Not Your Father's Floating-point
+  - Pentium Floating-point Optimization
+    - *Pipelining, Latency, and Throughput*
+    - *FXCH*
+  - The Dot Product
+  - The Cross Product
+  - Transformation
+  - Projection
+  - Rounding Control
+  - A Farewell to 3-D Fixed-point
 64. [__Quake's Visible-Surface Determination__][64]
+  - The Challenge of Separating All Things Seen from All Things Unseen
+  - VSD: The Toughest 3-D Challenge of All
+  - The Structure of Quake Levels
+  - Culling and Visible Surface Determination
+    - *Nodes Inside and Outside the View Frustum*
+  - Overdraw
+  - The Beam Tree
+  - 3-D Engine du Jour
+    - *Subdividing Raycast*
+    - *Vertex-Free Surfaces*
+    - *The Draw-Buffer*
+    - *Span-Based Drawing*
+    - *Portals*
+  - Breakthrough!
+  - Simplify, and Keep on Trying New Things
+  - Learn Now, Pay Forward
+  - References
 65. [__3-D Clipping and Other Thoughts__][65]
+  - Determining What's Inside Your Field of View
+  - 3-D Clipping Basics
+    - *Intersecting a Line Segment with a Plane*
+  - Polygon Clipping
+    - *Clipping to the Frustum*
+    - *The Lessons of Listing 65.3*
+  - Advantages of Viewspace Clipping
+  - Further Reading
 66. [__Quake's Hidden-Surface Removal__][66]
+  - Struggling with Z-Order Solutions to the Hidden Surface Problem
+  - Creative Flux and Hidden Surfaces
+    - *Drawing Moving Objects*
+    - *Performance Impact*
+    - *Leveling and Improving Performance*
+  - Sorted Spans
+    - *Edges versus Spans*
+  - Edge-Sorting Keys
+    - *Where That l/Z Equation Comes From*
+    - *Quake and Z-Sorting*
+    - *Decisions Deferred*
 67. [__Sorted Spans in Action__][67]
+  - Implementing Independent Span Sorting for Rendering without Overdraw
+  - Quake and Sorted Spans
+  - Types of l/z Span Sorting
+    - *Intersecting Span Sorting*
+    - *Abutting Span Sorting*
+    - *Independent Span Sorting*
+  - l/z Span Sorting in Action
+    - *Implementation Notes*
 68. [__Quake's Lighting Model__][68]
+  - A Radically Different Approach to Lighting Polygons
+    - *Problems with Gouraud Shading*
+    - *Perspective Correctness*
+    - *Decoupling Lighting from Rasterization*
+    - *Size and Speed*
+    - *Mipmapping To The Rescue*
+    - *Two Final Notes on Surface Caching*
 69. [__Surface Caching and Quake's Triangle Models__][69]
+  - []()
+    - *Letting the Graphics Card Build the Textures*
+    - *The Light Map as Alpha Texture*
+    - *Drawing Triangle Models Fast*
+    - *Trading Subpixel Precision for Speed*
+    - *An Idea that Didn't Work*
+    - *An Idea that Did Work*
+    - *More Ideas that Might Work*
 70. [__Quake: A Post-Mortem and a Glimpse into the Future__][70]
   - []()
     - *Lighting*
