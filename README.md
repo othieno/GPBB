@@ -11,75 +11,292 @@ Table of Contents
 -----------------
 
 1. [__The Best Optimizer is between Your Ears__][01]
-- [__A World Apart__][02]
-- [__Assume Nothing__][03]
-- [__In the Lair of the Cycle-Eaters__][04]
-- [__Crossing the Border__][05]
-- [__Looking Past Face Value__][06]
-- [__Local Optimization__][07]
-- [__Speeding Up C with Assembly Language__][08]
-- [__Hints My Readers Gave Me__][09]
-- [__Patient Coding, Faster Code__][10]
-- [__Pushing the 286 and 386__][11]
-- [__Pushing the 486__][12]
-- [__Aiming the 486__][13]
-- [__Boyer-Moore String Searching__][14]
-- [__Linked Lists and Unintended Challenges__][15]
-- [__There Ain't No Such Thing as the Fastest Code__][16]
-- [__The Game of Life__][17]
-- [__It's a Wonderful Life__][18]
-- [__Pentium: Not the Same Old Song__][19]
-- [__Pentium Rules__][20]
-- [__Unleashing the Pentium's V-pipe__][21]
-- [__Zenning and the Flexible Mind__][22]
-- [__Bones and Sinew__][23]
-- [__Parallel Processing with the VGA__][24]
-- [__VGA Data Machinery__][25]
-- [__VGA Write Mode 3__][26]
-- [__Yet Another VGA Write Mode__][27]
-- [__Reading VGA Memory__][28]
-- [__Saving Screens and Other VGA Mysteries__][29]
-- [__Video Est Omnis Divisa__][30]
-- [__Higher 256-Color Resolution on the VGA__][31]
-- [__Be It Resolved: 360x480__][32]
-- [__Yogi Bear and Eurythmics Confront VGA Colors__][33]
-- [__Changing Colors without Writing Pixels__][34]
-- [__Bresenham Is Fast, and Fast Is Good__][35]
-- [__The Good, theBad, and the Run-Sliced__][36]
-- [__Dead Cats and Lightning Lines__][37]
-- [__The Polygon Primeval__][38]
-- [__Fast Convex Polygons__][39]
-- [__Of Songs, Taxes, and the Simplicity of Complex Polygons__][40]
-- [__Those Way-Down Polygon Nomenclature Blues__][41]
-- [__Wu'ed in Haste; Fried, Stewed at Leisure__][42]
-- [__Bit-Plane Animation__][43]
-- [__Split Screens Save the Page-Flipped Day__][44]
-- [__Dog Hair and Dirty Rectangles__][45]
-- [__Who Was that Masked Image?__][46]
-- [__Mode X: 256-Color VGA Magic__][47]
-- [__Mode X Marks the Latch__][48]
-- [__Mode X 256-Color Animation__][49]
-- [__Adding a Dimension__][50]
-- [__Sneakers in Space__][51]
-- [__Fast 3-D Animation: Meet X-Sharp__][52]
-- [__Raw Speed and More__][53]
-- [__3-D Shading__][54]
-- [__Color Modeling in 256-Color Mode__][55]
-- [__Pooh and the Space Station__][56]
-- [__10,000 Freshly Sheared Sheep on the Screen__][57]
-- [__Heinlein's Crystal Ball, Spock's Brain, and the 9-Cycle Dare__][58]
-- [__The Idea of BSP Trees__][59]
-- [__Compiling BSP Trees__][60]
-- [__Frames of Reference__][61]
-- [__One Story, Two Rules, and a BSP Renderer__][62]
-- [__Floating-Point for Real-Time 3-D__][63]
-- [__Quake's Visible-Surface Determination__][64]
-- [__3-D Clipping and Other Thoughts__][65]
-- [__Quake's Hidden-Surface Removal__][66]
-- [__Sorted Spans in Action__][67]
-- [__Quake's Lighting Model__][68]
-- [__Surface Caching and Quake's Triangle Models__][69]
-- [__Quake: A Post-Mortem and a Glimpse into the Future__][70]
+  - The Human Element of Code Optimization
+  - Understanding High Performance
+    - *When Fast Isn't Fast*
+  - Rules for Building High-Performance Code
+    - *Know Where You're Going*
+    - *Make a Big Map*
+    - *Make Lots of Little Maps*
+    - *Know the Territory*
+    - *Know When It Matters*
+    - *Always Consider the Alternatives*
+    - *Know How to Turn On the Juice*
+2. [__A World Apart__][02]
+  - The Unique Nature of Assembly Language Optimization
+  - Instructions: The Individual versus the Collective
+  - Assembly Is Fundamentally Different
+    - *Transformation Inefficiencies*
+    - *Self-Reliance*
+    - *Knowledge*
+  - The Flexible Mind
+    - *Where to Begin?*
+3. [__Assume Nothing__][03]
+  - Understanding and Using the Zen Timer
+  - The Costs of Ignorance
+  - The Zen Timer
+    - *The Zen Timer Is a Means, Not an End*
+    - *Starting the Zen Timer*
+  - Time and the PC
+  - Stopping the Zen Timer
+  - Reporting Timing Results
+  - Notes on the Zen Timer
+  - A Sample Use of the Zen Timer
+  - The Long-Period Zen Timer
+    - *Stopping the Clock*
+  - Example Use of the Long-Period Zen Timer
+  - Using the Zen Timer from C
+    - *Watch Out for Optimizing Assemblers!*
+    - *Further Reading*
+    - *Armed with the Zen Timq Onward and Upward*
+4. [__In the Lair of the Cycle-Eaters__][04]
+  - How the PC Hardware Devours Code Performance
+  - Cycle-Eaters
+  - The Nature of Cycle-Eaters
+    - *The 8088's Ancestral Cycle-Eaters*
+  - The 8-Bit Bus Cycle-Eater
+    - *The Impact of the 8-Bit Bus Cycle-Eater*
+    - *What to Do about the 8-Bit Bus Cycle-Eater?*
+  - The Prefetch Queue Cycle-Eater*
+    - *Official Execution Times Are Only Part of the Story*
+    - *There Is No Such Beast as a True Instruction Execution Time*
+    - *Approximating Overall Execution Times*
+    - *What to Do about the Prefetch Queue Cycle-Eater?*
+    - *Holding Up the 8088*
+  - Dynamic RAM Refresh: The Invisible Hand
+    - *How DRAM Refresh Works in the PC*
+    - *The Impact of DRAM Refresh*
+    - *What to Do About the DRAM Refresh Cycle-Eater?*
+  - Wait States
+  - The Display Adapter Cycle-Eater
+    - *The Impact of the Display Adapter Cycle-Eater*
+    - *What to Do about the Display Adapter Cycle-Eater?*
+    - *Cycle-Eaters: A Summary*
+    - *What Does It All Mean?*
+5. [__Crossing the Border__][05]
+  - Searching Files with Restartable Blocks
+    - *Searching for Text*
+  - Avoiding the String Trap
+  - Brute-Force Techniques
+  - Using memchr()
+    - *Making a Search Restartable*
+  - Interpreting Where the Cycles Go
+    - *Knowing When Assembly Is Pointless*
+  - Always Look Where Execution Is Going
+6. [__Looking Past Face Value__][06]
+  - How Machine Instructions May Do More Than You Think
+    - *Memory Addressing and Arithmetic*
+  - Math via Memory Addressing
+    - *The Wonders of LEA on the 386*
+  - Multiplication with LEA Using Non-Powers of Two
+7. [__Local Optimization__][07]
+  - Optimizing Halfway between Algorithms and Cycle Counting
+    - *When LOOP Is a Bad Idea*
+  -The Lessons of LOOP and JCXZ
+    - *Avoiding LOOPS of Any Stripe*
+  - Local Optimization
+  - Unrolling Loops
+    - *Rotating and Shifting with Tables*
+    - *NOT Flips Bits -- Not Flags*
+    - *Incrementing with and without Carry*
+8. [__Speeding Up C with Assembly Language__][08]
+  - Jumping Languages When You Know It'll Help
+    - *Billy, Don't Be a Compiler*
+  - Don't Call Your Functions on Me, Baby
+  - Stack Frames Slow So Much
+  - Torn Between Two Segments
+    - *Why Speeding Up Is Hard to Do*
+  - Taking It to the Limit
+    - *A C-to-Assembly Case Study*
+9. [__Hints My Readers Gave Me__][09]
+  - Optimization Odds and Ends from the Field
+    - *Another Look at LEA*
+    - *The Kennedy Portfolio*
+    - *Speeding Up Multiplication*
+    - *Optimizing Optimized Searching*
+    - *Short Sorts*
+    - *Full 32-Bit Division*
+    - *Sweet Spot Revisited*
+    - *Hard-core Cycle Counting*
+    - *Hardwired Far Jumps*
+    - *Setting 32-Bit Registers: Time versus Space*
+10. [__Patient Coding, Faster Code__][10]
+  - How Working Quickly Can Bring Execution to a Crawl
+    - *The Case for Delayed Gratification*
+  - The Brute-Force Syndrome
+    - *Wasted Breakthroughs*
+  - Recursion
+    - *Patient Optimization*
+11. [__Pushing the 286 and 386__][11]
+  - New Registers, NewInstructions, New Timings, New Complications
+  - Family Matters
+  - Crossing the Gulf to the 286 and the 386
+  - In the Lair of the Cycle-Eaters, Part II
+    - *System Wait States*
+    - *Data Alignment*
+  - Code Alignment
+    - *Alignment and the 386*
+    - *Alignment and the Stack*
+    - *The DRAM Refresh Cycle-Eater: Still an Act of God*
+    - *The Display Adapter Cycle-Eater*
+  - New Instructions and Features: The 286
+  - New Instructions and Features: The 386
+    - *Optimization Rules: The More Things Change...*
+    - *Detailed Optimization*
+  - popf and the 286
+12. [__Pushing the 486__][12]
+  - It's Not Just a Bigger 386
+    - *Enter the 486*
+  - Rules to Optimize By
+    - *The Hazards of Indexed Addressing*
+    - *Calculate Memory Pointers Ahead of Time*
+  - Caveat Programmor
+    - *Stack Addressing and Address Pipelining*
+    - *Problems with Byte Registers*
+    - *More Fun with Byte Registers*
+    - *Timing Your Own 486 Code*
+  - The Story Continues
+13. [__Aiming the 486__][13]
+  - Pipelines and Other Hazards of the High End
+    - *486 Pipeline Optimization*
+  - BSWAP: More Useful Than You Might Think
+  - Pushing and Popping Memory
+  - Optimal 1-Bit Shifts and Rotates
+  - 32-Bit Addressing Modes
+14. [__Boyer-Moore String Searching__][14]
+  - Optimizing a Pretty Optimum Search Algorithm
+  - String Searching Refresher
+  - The Boyer-Moore Algorithm
+  - Boyer-Moore: The Good and the Bad
+  - Further Optimization of Boyer-Moore
+    - *Know What You Know*
+15. [__Linked Lists and Unintended Challenges__][15]
+  - Unfamiliar Problems with Familiar Data Structures
+  - Linked Lists
+  - Dummies and Sentinels
+  - Circular Lists
+  - Hi/Lo in 24 Bytes
+16. [__There Ain't No Such Thing as the Fastest Code__][16]
+  - Lessons Learned in the Pursuit of the Ultimate Word Counter
+  - Counting Words in a Hurry
+    - *Which Way to Go from Here?*
+  - Challenges and Hazards
+    - *Blinding Yourself to a Better Approach*
+    - *Watch Out for Luggable Assumptions!*
+  - The Astonishment of Right-Brain Optimization
+  - Levels of Optimization
+    - *Optimization Level 1: Good Code*
+  - Level 2: A New Perspective
+    - *Level 3: Breakthrough*
+    - *Enough Word Counting Already!*
+17. [__The Game of Life__][17]
+  - The Triumph of Algorithmic Optimization in a Cellular Automata Game
+  - Conway's Game
+    - *The Rules of the Game*
+  - Where Does the Time Go?
+  - The Hazards and Advantages of Abstraction
+  - Heavy-Duty C++ Optimization
+  - Bringing In the Right Brain
+    - *Re-Examining the Task*
+    - *Acting on What We Know*
+    - *The Challenge That Ate My Life*
+18. [__It's a Wonderful Life__][18]
+  - Optimization beyond the Pale
+  - Breaking the Rules
+  - Table-Driven Magic
+  - Keeping Track of Change with a Change List
+    - *A Layperson's Overview of QLIFE*
+19. [__Pentium: Not the Same Old Song__][19]
+  - Learning a Whole Different Set of Optimization Rules
+  - The Return of Optimization as Art
+  - The Pentium: An Overview
+    - *Crossing Cache Lines*
+    - *Cache Organization*
+  - Faster Addressing and More
+  - Branch Prediction
+  - Miscellaneous Pentium Topics
+    - *486 versus Pentium Optimization*
+    - *Going Superscalar*
+20. [__Pentium Rules__][20]
+  - How Your Carbon-Based Optimizer Can Put the "Super" in Superscalar
+  - An Instruction in Every Pipe
+  - V-Pipe-Capable Instructions
+  - Lockstep Execution
+  - Superscalar Notes
+    - *Register Starvation*
+21. [__Unleashing the Pentium's V-pipe__][21]
+  - Focusing on Keeping Both Pentium Pipes Full
+  - Address Generation Interlocks
+  - Register Contention
+    - *Exceptions to Register Contention*
+  - Who's in First?
+  - Pentium Optimization in Action
+    - *A Quick Note on the 386 and 486*
+22. [__Zenning and the Flexible Mind__][22]
+  - Taking a Spin through What You've Learned
+  - Zenning
+23. [__Bones and Sinew__][23]
+24. [__Parallel Processing with the VGA__][24]
+25. [__VGA Data Machinery__][25]
+26. [__VGA Write Mode 3__][26]
+27. [__Yet Another VGA Write Mode__][27]
+28. [__Reading VGA Memory__][28]
+29. [__Saving Screens and Other VGA Mysteries__][29]
+30. [__Video Est Omnis Divisa__][30]
+31. [__Higher 256-Color Resolution on the VGA__][31]
+32. [__Be It Resolved: 360x480__][32]
+33. [__Yogi Bear and Eurythmics Confront VGA Colors__][33]
+34. [__Changing Colors without Writing Pixels__][34]
+35. [__Bresenham Is Fast, and Fast Is Good__][35]
+36. [__The Good, theBad, and the Run-Sliced__][36]
+37. [__Dead Cats and Lightning Lines__][37]
+38. [__The Polygon Primeval__][38]
+39. [__Fast Convex Polygons__][39]
+40. [__Of Songs, Taxes, and the Simplicity of Complex Polygons__][40]
+41. [__Those Way-Down Polygon Nomenclature Blues__][41]
+42. [__Wu'ed in Haste; Fried, Stewed at Leisure__][42]
+43. [__Bit-Plane Animation__][43]
+44. [__Split Screens Save the Page-Flipped Day__][44]
+45. [__Dog Hair and Dirty Rectangles__][45]
+46. [__Who Was that Masked Image?__][46]
+47. [__Mode X: 256-Color VGA Magic__][47]
+48. [__Mode X Marks the Latch__][48]
+49. [__Mode X 256-Color Animation__][49]
+50. [__Adding a Dimension__][50]
+51. [__Sneakers in Space__][51]
+52. [__Fast 3-D Animation: Meet X-Sharp__][52]
+53. [__Raw Speed and More__][53]
+54. [__3-D Shading__][54]
+55. [__Color Modeling in 256-Color Mode__][55]
+56. [__Pooh and the Space Station__][56]
+57. [__10,000 Freshly Sheared Sheep on the Screen__][57]
+58. [__Heinlein's Crystal Ball, Spock's Brain, and the 9-Cycle Dare__][58]
+59. [__The Idea of BSP Trees__][59]
+60. [__Compiling BSP Trees__][60]
+61. [__Frames of Reference__][61]
+62. [__One Story, Two Rules, and a BSP Renderer__][62]
+63. [__Floating-Point for Real-Time 3-D__][63]
+64. [__Quake's Visible-Surface Determination__][64]
+65. [__3-D Clipping and Other Thoughts__][65]
+66. [__Quake's Hidden-Surface Removal__][66]
+67. [__Sorted Spans in Action__][67]
+68. [__Quake's Lighting Model__][68]
+69. [__Surface Caching and Quake's Triangle Models__][69]
+70. [__Quake: A Post-Mortem and a Glimpse into the Future__][70]
+  - []()
+    - *Lighting*
+    - *Dynamic Lighting*
+    - *BSP Models*
+    - *Polygon Models and ZBuffering*
+    - *The Subdivision Rasterizer*
+    - *Sprites*
+    - *Particles*
+  - How We Spent Our Summer Vacation: After Shipping Quake
+    - *Verite Quake*
+    - *GLQuake*
+    - *WinQuake*
+    - *Quakeworld*
+    - *Quake 2*
 - [__Afterword__][A]<br/>
 - [__Index__][B]<br/>
 
