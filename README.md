@@ -3,8 +3,9 @@ GBPP
 
 __Graphics Programming Black Book__ by [__Michael Abrash__](http://en.wikipedia.org/wiki/Michael_Abrash).
 
-This repository contains the PDF version of the book as well as the
-unmodified source code written by the author himself.
+This repository contains a mirrored copy of the book in its entirety, as well as
+the original source code written by the author himself.
+All rights are reserved by the author, Michael Abrash.
 
 
 Table of Contents
