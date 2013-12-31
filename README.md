@@ -286,35 +286,238 @@ Table of Contents
   - A Bonus Blanker
   - Modifying VGA Registers
 30. [__Video Est Omnis Divisa__][30]
+  - The Joys and Galling Problems of Using Split Screens on the EGA and VGA
+  - How the Split Screen Works
+    - *The Split Screen in Action*
+    - *VGA and EGA Split-Screen Operation Don't Mix*
+  - Setting the Split-Screen-Related Registers
+  - The Problem with the EGA Split Screen
+  - Split Screen and Panning
+    - *The Split Screen and Horizontal Panning: An Example*
+  - Notes on Setting and Reading Registers
+  - Split Screens in Other Modes
+  - How Safe?
 31. [__Higher 256-Color Resolution on the VGA__][31]
+  - When Is 320x200 Really 320x400?
+  - Why 320x200? Only IBM Knows for Sure
+  - 320x400 256-Color Mode
+    - *Display Memory Organization in 320x400 Mode*
+    - *Reading and Writing Pixels*
+  - Two 256-Color Pages
+  - Something to Think About
 32. [__Be It Resolved: 360x480__][32]
+  - Taking 256-Color Modes About as Far as the Standard VGA Can Take Them
+  - Extended 256-Color Modes: What's Not to Like?
+  - 360x480 256-Color Mode
+  - How 360x480 256-Color Mode Works
+    - *480 Scan Lines per Screen: A Little Slower, But No Big Deal*
+    - *360 Pixels per Scan Line: No Mean Feat*
+    - *Accessing Display Memory in 360x480 256-Color Mode*
 33. [__Yogi Bear and Eurythmics Confront VGA Colors__][33]
+  - The Basics of VGA Color Generation
+  - VGA Color Basics
+    - *The Palette RAM*
+    - *The DAC*
+    - *Color Paging with the Color Select Register*
+    - *256-color Mode*
+    - *Setting the Palette RAM*
+    - *Setting the DAC*
+  - If You Can't Call the BIOS, Who Ya Gonna Call?
+  - An Example of Setting the DAC
 34. [__Changing Colors without Writing Pixels__][34]
+  - Special Effects through Realtime Manipulation of DAC Colors
+  - Color Cycling
+  - The Heart of the Problem
+    - *Loading the DAC via the BIOS*
+    - *Loading the DAC Directly*
+  - A Test Program for Color Cycling
+  - Color Cycling Approaches that Work
+  - Odds and Ends
+    - *The DAC Mask*
+    - *Reading the DAC*
+    - *Cycling Down*
 35. [__Bresenham Is Fast, and Fast Is Good__][35]
-36. [__The Good, theBad, and the Run-Sliced__][36]
+  - Implementing and Optimizing Bresenham's Line-Drawing Algorithm
+  - The Task at Hand
+  - Bresenham's Line-Drawing Algorithm
+    - *Strengths and Weaknesses*
+  - An Implementation in C
+    - *Looking at EVGALine*
+    - *Drawing Each Line*
+    - *Drawing Each Pixel*
+  - Comments on the C Implementation
+  - Bresenham's Algorithm in Assembly
+36. [__The Good, the Bad, and the Run-Sliced__][36]
+  - Faster Bresenham Lines with Run-Length Slice Line Drawing
+  - Run-Length Slice Fundamentals
+  - Run-Length Slice Implementation
+  - Run-Length Slice Details
 37. [__Dead Cats and Lightning Lines__][37]
+  - Optimizing Run-Length Slice Line Drawing in a Major Way
+  - Fast Run-Length Slice Line Drawing
+    - *How Fast Is Fast?*
+    - *Further Optimizations*
 38. [__The Polygon Primeval__][38]
+  - Drawing Polygons Efficiently and Quickly
+  - Filled Polygons
+    - *Which Side Is Inside?*
+  - How Do You Fit Polygons Together?
+  - Filling Non-Overlapping Convex Polygons
+  - Oddball Cases
 39. [__Fast Convex Polygons__][39]
+  - Filling Polygons in a Hurry
+  - Fast Convex Polygon Filling
+    - *Fast Drawing*
+    - *Fast Edge Tracing*
+  - The Finishing Touch: Assembly Language
+    - *Maximizing REP STOS*
+  - Faster Edge Tracing
 40. [__Of Songs, Taxes, and the Simplicity of Complex Polygons__][40]
+  - Dealing with Irregular Polygonal Areas
+  - Filling Arbitrary Polygons
+    - *Active Edges*
+  - Complex Polygon Filling: An Implementation
+    - *More on Active Edges*
+    - *Performance Considerations*
+  - Nonconvex Polygons
+    - *Details, Details*
 41. [__Those Way-Down Polygon Nomenclature Blues__][41]
+  - Names Do Matter when You Conceptualize a Data Structure
+  - Nomenclature in Action
 42. [__Wu'ed in Haste; Fried, Stewed at Leisure__][42]
+  - Fast Antialiased Lines Using Wu's Algorithm
+  - Wu Antialiasing
+  - Tracing and Intensity in One
+  - Sample Wu Antialiasing
+    - *Notes on Wu Antialiasing*
 43. [__Bit-Plane Animation__][43]
+  - A Simple and Extremely Fast Animation Method for Limited Color
+  - Bit-Planes: The Basics
+    - *Stacking the Palette Regsters*
+  - Bit-Plane Animation in Action
+  - Limitations of Bit-Plane Animation
+  - Shearing and Page Flipping
+  - Beating the Odds in the Jaw-Dropping Contest
 44. [__Split Screens Save the Page-Flipped Day__][44]
+  - 640x480 Page Flipped Animation in 64K...Almost
+  - A Plethora of Challenges
+  - A Page Flipping Animation Demonstration
+    - *Write Mode 3*
+    - *Drawing Text*
+    - *Page Flipping*
+    - *Knowing When to Flip*
+  - Enter the Split Screen
 45. [__Dog Hair and Dirty Rectangles__][45]
+  - Different Angles on Animation
+  - Plus Ça Change
+  - VGA Access Times
+  - Dirty-Rectangle Animation
+    - *So Why Not Use Page Flipping?*
+  - Dirty Rectangles in Action
+  - Hi-Res VGA Page Flipping
+  - Another Interesting Twist on Page Flipping
 46. [__Who Was that Masked Image?__][46]
+  - Optimizing Dirty-Rectangle Animation
+  - Dirty-Rectangle Animation, Continued
+  - Masked Images
+  - Internal Animation
+    - *Dirty-Rectangle Management*
+  - Drawing Order and Visual Quality
 47. [__Mode X: 256-Color VGA Magic__][47]
+  - Introducing the VGA's Undocumented "Animation-Optimal" Mode
+  - What Makes Mode X Special?
+  - Selecting 320x240 256-Color Mode
+  - Designing from a Mode X Perspective
+  - Hardware Assist from an Unexpected Quarter
 48. [__Mode X Marks the Latch__][48]
+  - The Internals of Animation's Best Video Display Mode
+  - Allocating Memory in Mode X
+  - Copying Pixel Blocks within Display Memory
+    - *Copying to Display Memory*
+  - Who Was that Masked Image Copier?
 49. [__Mode X 256-Color Animation__][49]
+  - How to Make the VGA Really Get up and Dance
+  - Masked Copying
+    - *Faster Masked Copying*
+    - *Notes on Masked Copying*
+  - Animation
+  - Mode X Animation in Action
+  - Works Fast, Looks Great
 50. [__Adding a Dimension__][50]
+  - 3-D Animation Using Mode X
+  - References on 3-D Drawing
+  - The 3-D Drawing Pipeline
+    - *Projection*
+    - *Translation*
+    - *Rotation*
+  - A Simple 3-D Example
+    - *Notes on the 3-D Animation Example*
+  - An Ongoing Journey
 51. [__Sneakers in Space__][51]
+  - Using Backface Removal to Eliminate Hidden Surfaces
+  - One-sided Polygons: Backface Removal
+    - *Backface Removal in Action*
+  - Incremental Transformation
+  - A Note on Rounding Negative Numbers
+  - Object Representation
 52. [__Fast 3-D Animation: Meet X-Sharp__][52]
+  - The First Iteration of a Generalized 3-D Animation Package
+  - This Chapter's Demo Program
+  - A New Animation Framework: X-Sharp
+  - Three Keys to Realtime Animation Performance
+    - *Drawbacks*
+    - *Where the Time Goes*
 53. [__Raw Speed and More__][53]
+  - The Naked Truth About Speed in 3-D Animation
+  - Raw Speed, Part 1: Assembly Language
+  - Raw Speed, Part 11: Look it Up
+    - *Hidden Surfaces*
+    - *Rounding*
+  - Having a Ball
 54. [__3-D Shading__][54]
+  - Putting Realistic Surfaces on Animated 3-D Objects
+  - Support for Older Processors
+  - Shading
+    - *Ambient Shading*
+    - *Diffuse Shading*
+  - Shading: Implementation Details
 55. [__Color Modeling in 256-Color Mode__][55]
+  - Pondering X-Sharp's Color Model in an RGB State of Mind
+  - A Color Model
+  - A Bonus from the BitMan
 56. [__Pooh and the Space Station__][56]
+  - Using Fast Texture Mapping to Place Pooh on a Polygon
+  - Principles of Quick-and-Dirty Texture Mapping
+    - *Mapping Textures Made Easy*
+    - *Notes on DDA Texture Mapping*
+  - Fast Texture Mapping: An Implementation
 57. [__10,000 Freshly Sheared Sheep on the Screen__][57]
+  - The Critical Role of Experience in Implementing Fast, Smooth Texture Mapping
+  - Visual Quality: A Black Hole ... Er, Art
+  - Fixed-Point Arithmetic, Redux
+  - Texture Mapping: Orientation Independence
+  - Mapping Textures across Multiple Polygons
+    - *Fast Texture Mapping*
 58. [__Heinlein's Crystal Ball, Spock's Brain, and the 9-Cycle Dare__][58]
+  - Using the Whole-Brain Approach to Accelerate Texture Mapping
+  - Texture Mapping Redux
+    - *Left-Brain Optimization*
+    - *A 90-Degree Shift in Perspective*
+  - That's Nice--But it Sure as Heck Ain't 9 Cycles
+    - *Don't Stop Thinking about Those Cycles*
+  - Texture Mapping Notes
 59. [__The Idea of BSP Trees__][59]
+  - What BSP Trees Are and How to Walk Them
+  - BSP Trees
+    - *Visibility Determination*
+    - *Limitations of BSP Trees*
+  - Building a BSP Tree
+    - *Visibility Ordering*
+  - Inorder Walks of BSP Trees
+    - *Know It Cold*
+    - *Measure and Learn*
+  - Surfing Amidst the Trees
+    - *Related Reading*
 60. [__Compiling BSP Trees__][60]
   - Taking BSP Trees from Concept to Reality
   - Compiling BSP Trees
